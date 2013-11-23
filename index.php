@@ -5,6 +5,29 @@
 <body>
 
 <?php
+/** initial vars **/
+$commonWords = array(
+	'mike',
+	'eng',
+	'www.linkedin.com/in/mikeeng401',
+	'interaction',
+	'designer',
+	'skype',
+	'mrengy',
+	'kolendowicz',
+	'michael',
+	'401-234-4611',
+	'805-234-1032',
+	'www.mike-eng.com',
+	'sent',
+	'am',
+	'pm',
+	'iphone'
+	);
+
+foreach ($commonWords as &$word){
+	$word = '/\b' . preg_quote($word, '/') . '\b/';
+}
 
 /**
  * Given an open and authenticated IMAP connection, displays some basic info
@@ -61,7 +84,10 @@ function showInbox($mailbox) {
        $message = imap_fetchbody($mailbox,$smooth_id,2);
        $messageAggregate .= $message;
 	}
-	echo $messageAggregate;
+	
+	$messageFiltered = preg_replace($commonWords, '', $messageAggregate);
+	
+	echo $messageFiltered;
 }
 
 /**
