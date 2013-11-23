@@ -81,7 +81,7 @@ function tryImapLogin($email, $password) {
 
 		echo '<br />';
 		echo 'count of smooth messages: ';
-		echo(count($smoothIds));
+		echo(count($smoothIds) +1 );
 		
 	}
 	
