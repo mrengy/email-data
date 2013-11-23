@@ -126,7 +126,8 @@ function showInbox($mailbox, $commonWords) {
 	
 	//$messageNoTags = strip_tags($messageAggregate);
 	$messageFiltered = preg_replace($commonWords, '', $messageAggregate);
-	echo $messageFiltered;
+	$messageShortened = preg_replace('~\b\S{30,}\b~', '', $messageFiltered);
+	echo $messageShortened;
 }
 
 /**
