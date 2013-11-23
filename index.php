@@ -96,11 +96,13 @@ $password = $_POST['password'];
 
 displayForm($email, $password);
 
+phpinfo();
+
 if ($email && $password) {
   tryImapLogin($email, $password);
 }
 
-phpinfo();
+
 ?>
 </body>
 </html>
