@@ -35,7 +35,7 @@ print_r($commonWords);
  * Given an open and authenticated IMAP connection, displays some basic info
  * about the INBOX folder.
  */
-function showInbox($mailbox) {
+function showInbox($mailbox, $commonWords) {
   /**
    * Print the INBOX message count and the subject of all messages
    * in the INBOX
@@ -98,7 +98,7 @@ function showInbox($mailbox) {
 /**
  * Tries to login to IMAP and show inbox stats.
  */
-function tryImapLogin($email, $password) {
+function tryImapLogin($email, $password, $commonWords) {
   /**
    * Make the IMAP connection and send the auth request
    */
@@ -120,7 +120,7 @@ function tryImapLogin($email, $password) {
 	
 	if($mailbox){
 		echo '<h1>Successfully authenticated!</h1>';
-		showInbox($mailbox);		
+		showInbox($mailbox, $commonWords);		
 	}
 	
 }
@@ -150,7 +150,7 @@ displayForm($email, $password);
 //phpinfo();
 
 if ($email && $password) {
-  tryImapLogin($email, $password);
+  tryImapLogin($email, $password, $commonWords);
 }
 
 
