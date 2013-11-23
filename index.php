@@ -125,7 +125,7 @@ function showInbox($mailbox, $commonWords) {
 	//$messageFilteredTwice = preg_replace($commonWords, '', $MessageFilteredOnce);
 	
 	//$messageNoTags = strip_tags($messageAggregate);
-	$messageFiltered = preg_replace($commonWords, '', $MessageAggregate);
+	$messageFiltered = preg_replace($commonWords, '', $messageAggregate);
 	echo $messageFiltered;
 }
 
