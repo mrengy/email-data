@@ -33,15 +33,23 @@ function showInbox($mailbox) {
   */
 	//print_r($imap);
 	$smoothIds = imap_search($mailbox, 'FROM "michael.kolendowicz@gmail.com"', SE_UID);
-
+	/*
 	echo '<br/>';
 	echo 'Message IDs from Jack Smooth: ';
 	echo '<br />';
 	print_r($smoothIds);
+	*/
 
 	echo '<br />';
-	echo 'count of smooth messages: ';
+	echo 'Number of smooth messages: ';
 	echo(count($smoothIds));
+	
+	foreach ($smoothIds as $smooth_id){
+		$email_info = imap_fetch_overview($mailbox,$email_id,0);
+        $message = imap_fetchbody($mailbox,$email_id,2);
+        echo "Subject: " . $email_info[0]->subject . "\n";
+        echo "Message: " . $message . "\n";
+	}
 	
 }
 
