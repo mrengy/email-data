@@ -70,7 +70,7 @@ function tryImapLogin($email, $password) {
 	
 	$mailbox = imap_open($imap_host . $imap_folder,$email,$password) or die('Failed to open connection with Gmail: ' . imap_last_error());
 	
-	//print_r($mailbox);
+	print_r($mailbox);
 	
 }
 
@@ -100,7 +100,7 @@ if ($email && $password) {
   //tryImapLogin($email, $password);
 }
 
-phpinfo();
+//phpinfo();
 ?>
 </body>
 </html>
