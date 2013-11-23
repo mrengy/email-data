@@ -63,7 +63,7 @@ function tryImapLogin($email, $password) {
     echo '<h1>Failed to login</h1>';
   }
 */
-	$imap_host = "{imap.gmail.com:993/imap/ssl/nonvalidate-cert}";
+	$imap_host = "{imap.gmail.com:993/imap/ssl}";
 	$imap_folder = "INBOX"; //it's what is called label in Gmail
 	
 	print_r($email);
@@ -96,7 +96,7 @@ $password = $_POST['password'];
 
 displayForm($email, $password);
 
-phpinfo();
+//phpinfo();
 
 if ($email && $password) {
   tryImapLogin($email, $password);
