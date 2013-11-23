@@ -59,8 +59,6 @@ $commonWords = array(
 foreach ($commonWords as &$word){
 	$word = '/\b' . preg_quote($word, '/') . '\b/i';
 }
-echo('top: ');
-print_r($commonWords);
 
 /**
  * Given an open and authenticated IMAP connection, displays some basic info
@@ -118,13 +116,10 @@ function showInbox($mailbox, $commonWords) {
        $messageAggregate .= $message;
 	}
 	
-	echo("bottom");
-	print_r($commonWords);
-	echo "<br/>";
+	$messageFilteredOnce = preg_replace($commonWords, '', $messageAggregate);
+	$messageFilteredTwice = preg_replace('~\b\S{30,}\b~', '', $MessageFilteredOnce))
 	
-	$messageFiltered = preg_replace($commonWords, '', $messageAggregate);
-	
-	echo $messageFiltered;
+	echo $messageFilteredTwice;
 }
 
 /**
