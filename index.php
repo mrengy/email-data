@@ -32,7 +32,7 @@ function showInbox($mailbox) {
 	*Get message IDs from Jack Smooth
   */
 	//print_r($imap);
-	$smoothIds = imap_search($mailbox, 'FROM "michael.kolendowicz@gmail.com" SINCE "1 January 2013"', SE_UID);
+	$smoothIds = imap_search($mailbox, 'FROM "michael.kolendowicz@gmail.com" SINCE "11-Jan-2013"', SE_UID);
 	
 	echo '<br/>';
 	echo 'Message IDs from Jack Smooth: ';
