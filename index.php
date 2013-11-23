@@ -85,6 +85,8 @@ function showInbox($mailbox) {
        $messageAggregate .= $message;
 	}
 	
+	print_r($commonWords);
+	
 	$messageFiltered = preg_replace($commonWords, '', $messageAggregate);
 	
 	echo $messageFiltered;
