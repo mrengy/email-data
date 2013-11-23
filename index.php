@@ -7,6 +7,7 @@
 <?php
 /** initial vars **/
 $commonWords = array(
+	'www.mike-eng.com',
 	'mike',
 	'eng',
 	'www.linkedin.com/in/mikeeng401',
@@ -19,13 +20,10 @@ $commonWords = array(
 	'michael',
 	'401-234-4611',
 	'805-234-1032',
-	'www.mike-eng.com',
 	'sent',
 	'AM',
 	'PM',
 	'iphone',
-	'=A0',
-	'='
 	);
 
 foreach ($commonWords as &$word){
