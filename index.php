@@ -27,7 +27,7 @@ $commonWords = array(
 	);
 
 foreach ($commonWords as &$word){
-	$word = '/\b' . preg_quote($word, '/') . '\b/';
+	$word = '/\b' . preg_quote($word, '/') . '\b/i';
 }
 echo('top: ');
 print_r($commonWords);
