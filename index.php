@@ -10,7 +10,7 @@
  * Given an open and authenticated IMAP connection, displays some basic info
  * about the INBOX folder.
  */
-function showInbox() {
+function showInbox($mailbox) {
   /**
    * Print the INBOX message count and the subject of all messages
    * in the INBOX
@@ -32,9 +32,7 @@ function showInbox() {
 	*Get message IDs from Jack Smooth
   */
 	//print_r($imap);
-	//$smoothIds = imap_search($imap, 'FROM "michael.kolendowicz@gmail.com" SINCE "1 January 2013"', SE_UID);
-	/*
-	$smoothIds = $storage->search(array('TEXT michael'));
+	$smoothIds = imap_search($mailbox, 'FROM "michael.kolendowicz@gmail.com" SINCE "1 January 2013"', SE_UID);
 	
 	echo '<br/>';
 	echo 'Message IDs from Jack Smooth: ';
@@ -44,7 +42,7 @@ function showInbox() {
 	echo '<br />';
 	echo 'count of smooth messages: ';
 	echo(count($smoothIds));
-	*/
+	
 }
 
 /**
@@ -70,7 +68,10 @@ function tryImapLogin($email, $password) {
 	
 	$mailbox = imap_open($imap_host . $imap_folder,$email,$password) or die('Failed to open connection with Gmail: ' . imap_last_error());
 	
-	print_r($mailbox);
+	if($mailbox){
+		echo '<h1>Successfully authenticated!</h1>';
+		showInbox($mailbox);
+	}
 	
 }
 
