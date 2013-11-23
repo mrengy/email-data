@@ -23,7 +23,9 @@ $commonWords = array(
 	'sent',
 	'AM',
 	'PM',
-	'iphone'
+	'iphone',
+	'=A0',
+	'='
 	);
 
 foreach ($commonWords as &$word){
