@@ -72,7 +72,7 @@ function tryImapLogin($email, $password) {
 		echo '<h1>Successfully authenticated!</h1>';
 		//showInbox($mailbox);
 		
-		$smoothIds = imap_search($mailbox, 'FROM "michael.kolendowicz@gmail.com" SINCE "11-Jan-2013"');
+		$smoothIds = imap_search($mailbox, 'FROM "michael.kolendowicz@gmail.com"');
 
 		echo '<br/>';
 		echo 'Message IDs from Jack Smooth: ';
