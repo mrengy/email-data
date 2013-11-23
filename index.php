@@ -14,14 +14,15 @@ $commonWords = array(
 	'designer',
 	'skype',
 	'mrengy',
+	'michael',
 	'kolendowicz',
 	'michael',
 	'401-234-4611',
 	'805-234-1032',
 	'www.mike-eng.com',
 	'sent',
-	'am',
-	'pm',
+	'AM',
+	'PM',
 	'iphone'
 	);
 
@@ -91,7 +92,7 @@ function showInbox($mailbox, $commonWords) {
 	print_r($commonWords);
 	echo "<br/>";
 	
-	$messageFiltered = preg_replace($commonWords, '', $messageAggregate);
+	$messageFiltered = preg_replace($commonWords."/i", '', $messageAggregate);
 	
 	echo $messageFiltered;
 }
