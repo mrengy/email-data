@@ -44,13 +44,24 @@ function showInbox($mailbox) {
 	echo 'Number of smooth messages: ';
 	echo(count($smoothIds));
 	
+	//output each message individually
+	/*
 	foreach ($smoothIds as $smooth_id){
 		$email_info = imap_fetch_overview($mailbox,$smooth_id,0);
         $message = imap_fetchbody($mailbox,$smooth_id,2);
         echo "Subject: " . $email_info[0]->subject . "\n";
         echo "Message: " . $message . "\n";
 	}
+	*/
 	
+	//output aggregate message
+	$messageAggregate = '';
+	
+	foreach ($smoothIds as $smooth_id){
+       $message = imap_fetchbody($mailbox,$smooth_id,2);
+       $messageAggregate .= $message;
+	}
+	echo $messageAggregate;
 }
 
 /**
