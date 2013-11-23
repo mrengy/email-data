@@ -63,6 +63,8 @@ foreach ($commonWords as &$word){
 //adding length filter to end of commonWords array
 array_push($commonWords, '~\b\S{30,}\b~');
 
+print_r($commonWords);
+
 /**
  * Given an open and authenticated IMAP connection, displays some basic info
  * about the INBOX folder.
@@ -121,9 +123,10 @@ function showInbox($mailbox, $commonWords) {
 	
 	//$messageFilteredOnce = preg_replace('~\b\S{30,}\b~', '', $messageAggregate);
 	//$messageFilteredTwice = preg_replace($commonWords, '', $MessageFilteredOnce);
-	
+	/*
 	$messageFilteredOnce = preg_replace($commonWords, '', $MessageAggregate);
 	echo $messageFilteredOnce;
+	*/
 }
 
 /**
