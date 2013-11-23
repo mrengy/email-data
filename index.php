@@ -89,10 +89,11 @@ function showInbox($mailbox, $commonWords) {
 	
 	echo("bottom");
 	print_r($commonWords);
+	echo "<br/>";
 	
-	//$messageFiltered = preg_replace($commonWords, '', $messageAggregate);
+	$messageFiltered = preg_replace($commonWords, '', $messageAggregate);
 	
-	//echo $messageFiltered;
+	echo $messageFiltered;
 }
 
 /**
