@@ -121,12 +121,11 @@ function showInbox($mailbox, $commonWords) {
        $messageAggregate .= $message;
 	}
 	
-	//$messageFilteredOnce = preg_replace('~\b\S{30,}\b~', '', $messageAggregate);
+	$messageFilteredOnce = preg_replace('~\b\S{30,}\b~', '', $messageAggregate);
 	//$messageFilteredTwice = preg_replace($commonWords, '', $MessageFilteredOnce);
-	/*
-	$messageFilteredOnce = preg_replace($commonWords, '', $MessageAggregate);
+	
+	//$messageFilteredOnce = preg_replace($commonWords, '', $MessageAggregate);
 	echo $messageFilteredOnce;
-	*/
 }
 
 /**
