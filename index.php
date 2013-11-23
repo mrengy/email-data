@@ -32,13 +32,13 @@ function showInbox($mailbox) {
 	*Get message IDs from Jack Smooth
   */
 	//print_r($imap);
-	$smoothIds = imap_search($mailbox, 'FROM "michael.kolendowicz@gmail.com" SINCE "11-Jan-2013"', SE_UID);
-	
+	$smoothIds = imap_search($mailbox, 'FROM "michael.kolendowicz@gmail.com", SE_UID');
+
 	echo '<br/>';
 	echo 'Message IDs from Jack Smooth: ';
 	echo '<br />';
 	print_r($smoothIds);
-	
+
 	echo '<br />';
 	echo 'count of smooth messages: ';
 	echo(count($smoothIds));
@@ -70,19 +70,7 @@ function tryImapLogin($email, $password) {
 	
 	if($mailbox){
 		echo '<h1>Successfully authenticated!</h1>';
-		//showInbox($mailbox);
-		
-		$smoothIds = imap_search($mailbox, 'FROM "michael.kolendowicz@gmail.com"');
-
-		echo '<br/>';
-		echo 'Message IDs from Jack Smooth: ';
-		echo '<br />';
-		print_r($smoothIds);
-
-		echo '<br />';
-		echo 'count of smooth messages: ';
-		echo(count($smoothIds));
-		
+		showInbox($mailbox);		
 	}
 	
 }
