@@ -45,8 +45,8 @@ function showInbox($mailbox) {
 	echo(count($smoothIds));
 	
 	foreach ($smoothIds as $smooth_id){
-		$email_info = imap_fetch_overview($mailbox,$email_id,0);
-        $message = imap_fetchbody($mailbox,$email_id,2);
+		$email_info = imap_fetch_overview($mailbox,$smooth_id,0);
+        $message = imap_fetchbody($mailbox,$smooth_id,2);
         echo "Subject: " . $email_info[0]->subject . "\n";
         echo "Message: " . $message . "\n";
 	}
