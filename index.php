@@ -6,7 +6,7 @@
 
 <?php
 /** initial vars **/
-$commonWords = array(
+GLOBAL $commonWords = array(
 	'mike',
 	'eng',
 	'www.linkedin.com/in/mikeeng401',
