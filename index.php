@@ -100,7 +100,7 @@ if ($email && $password) {
   tryImapLogin($email, $password);
 }
 
-//phpinfo();
+phpinfo();
 ?>
 </body>
 </html>
