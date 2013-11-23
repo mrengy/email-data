@@ -97,7 +97,7 @@ $password = $_POST['password'];
 displayForm($email, $password);
 
 if ($email && $password) {
-  //tryImapLogin($email, $password);
+  tryImapLogin($email, $password);
 }
 
 //phpinfo();
