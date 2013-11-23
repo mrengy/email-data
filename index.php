@@ -9,6 +9,7 @@
 $commonWords = array(
 	'mrengy@gmail.com',
 	'emily.ustach@gmail.com',
+	'caitlin.saharek@gmail.com',
 	'wrote',
 	'mon',
 	'tue',
@@ -29,6 +30,10 @@ $commonWords = array(
 	'oct',
 	'nov',
 	'dec',
+	'2010',
+	'2011',
+	'2012',
+	'2013',
 	'www.mike-eng.com',
 	'mike',
 	'eng',
@@ -45,6 +50,9 @@ $commonWords = array(
 	'sent',
 	'AM',
 	'PM',
+	'sent',
+	'from',
+	'my',
 	'iphone',
 	);
 
