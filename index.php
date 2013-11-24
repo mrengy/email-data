@@ -7,9 +7,6 @@
 <?php
 /** initial vars **/
 $commonWords = array(
-	'mrengy@gmail.com',
-	'emily.ustach@gmail.com',
-	'caitlin.saharek@gmail.com',
 	'wrote',
 	'mon',
 	'tue',
@@ -34,19 +31,14 @@ $commonWords = array(
 	'2011',
 	'2012',
 	'2013',
-	'www.mike-eng.com',
 	'mike',
 	'eng',
-	'www.linkedin.com/in/mikeeng401',
 	'interaction',
 	'designer',
 	'skype',
 	'mrengy',
 	'michael',
 	'kolendowicz',
-	'michael',
-	'401-234-4611',
-	'805-234-1032',
 	'sent',
 	'AM',
 	'PM',
@@ -91,7 +83,7 @@ function showInbox($mailbox, $commonWords) {
 	*Get message IDs from Jack Smooth
   */
 	//print_r($imap);
-	$smoothIds = imap_search($mailbox, 'FROM "michael.kolendowicz@gmail.com"');
+	$smoothIds = imap_search($mailbox, 'FROM "kolendowicz"');
 	/*
 	echo '<br/>';
 	echo 'Message IDs from Jack Smooth: ';
